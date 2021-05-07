@@ -1,0 +1,19 @@
+pipeline{
+    agent any
+    
+    environment {
+        dotnet ='C:\\Program Files (x86)\\dotnet\\'
+        }
+        
+    triggers {
+        pollSCM '* * * * *'
+    }
+    tages{
+ stage('Checkout') {
+    steps {
+     git credentialsId: 'Arifshakil28@gmail.com', url: 'https://github.com/ArifShakilNobin/University-Course-And-Result-Management-System-.git', branch: 'master'
+     }
+  }
+ }
+ 
+  
